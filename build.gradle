@@ -1,0 +1,61 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'scala'
+apply plugin: 'forge'
+
+version = "0.0.1"
+group = "mc.harvestmoon"
+archivesBaseName = "harvestmoon"
+
+minecraft {
+    version = "1.7.10-10.13.4.1566-1.7.10"
+    runDir = "run"
+}
+
+repositories {
+    maven {
+        name "mobius"
+        url "http://mobiusstrip.eu/maven"
+    }
+    maven {
+        name "chickenbones"
+        url "http://chickenbones.net/maven/"
+    }
+    maven {
+        name = "harvestmoon"
+        url = "https://gitlab.com/harvest-moon/maven/raw/master/"
+    }
+}
+
+dependencies {
+    compile "com.bioxx.tfc:TerraFirmaCraft:0.79.26"
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

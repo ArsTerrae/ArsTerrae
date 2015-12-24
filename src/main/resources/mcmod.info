@@ -1,0 +1,21 @@
+{
+  "modListVersion": 2,
+  "modList": [{
+    "modid": "harvestmoon",
+    "name": "Harvest Moon",
+    "description": "Survival Mode as it should have been.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url" : "https://gitlab.com/groups/harvest-moon",
+    "updateUrl": "https://gitlab.com/groups/harvest-moon",
+    "authorList": [ "harvestmoon" ],
+    "credits": "https://gitlab.com/groups/harvest-moon",
+    "logoFile": "",
+    "screenshots": [  ],
+    "parent": "",
+    "requiredMods": [  ],
+    "dependencies": ["Forge@[10.13.4.1448,)"],
+    "dependants": [  ],
+    "useDependencyInformation": "true"
+  }]
+}
