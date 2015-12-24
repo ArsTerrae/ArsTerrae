@@ -7,7 +7,7 @@ import org.apache.logging.log4j.{LogManager, Logger}
 
 @Mod(modid = "harvestmoon", name = "Harvest Moon", version = "0.0.1", modLanguage = "scala")
 object HarvestMoon {
-  val log: Logger = LogManager.getLogger("HarvestMoon")
+  private val log: Logger = LogManager.getLogger("HarvestMoon")
 
   @EventHandler
   def init(e: FMLInitializationEvent): Unit = {
