@@ -1,5 +1,11 @@
+image: ubuntu:15.10
+
 stages:
   - build
+
+before_script:
+  - apt-get update
+  - apt-get install -y --force-yes openjdk-8-jdk scala 
 
 build:
   stage: build
