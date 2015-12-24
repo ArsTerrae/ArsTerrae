@@ -3,7 +3,7 @@
   "modList": [{
     "modid": "harvestmoon",
     "name": "Harvest Moon",
-    "description": "Survival Mode as it should have been.",
+    "description": "Adding realism and features to TerraFirmaCraft!",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url" : "https://gitlab.com/groups/harvest-moon",
@@ -13,8 +13,8 @@
     "logoFile": "",
     "screenshots": [  ],
     "parent": "",
-    "requiredMods": [  ],
-    "dependencies": ["Forge@[10.13.4.1448,)"],
+    "requiredMods": ["terrafirmacraft@[0.79.26,)"],
+    "dependencies": ["terrafirmacraft@[0.79.26,)", "Forge@[10.13.4.1448,)"],
     "dependants": [  ],
     "useDependencyInformation": "true"
   }]
