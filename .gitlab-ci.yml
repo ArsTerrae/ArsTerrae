@@ -5,7 +5,3 @@ build:
   stage: build
   script:
     - gradlew build
-
-artifacts:
-  paths:
-    - build/libs/
