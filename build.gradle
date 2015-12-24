@@ -38,7 +38,7 @@ repositories {
     }
     maven {
         name = "harvestmoon"
-        url = "https://gitlab.com/harvest-moon/maven/raw/master/"
+        url = "https://gitlab.com/harvestmoon/maven/raw/master/"
     }
 }
 
