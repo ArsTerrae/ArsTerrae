@@ -16,6 +16,7 @@ notifications:
     irc:
         channels:
             - "irc.fyrechat.net#vana-commits"
+            - "irc.fyrechat.net#harvestmoon"
         skip_join: true
         template:
             - "%{repository}#%{build_number} (%{branch} - %{commit} - %{author}): %{message}"
