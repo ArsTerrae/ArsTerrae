@@ -22,6 +22,7 @@ object HarvestMoon {
     @EventHandler
     def init(e: FMLInitializationEvent): Unit = {
       log info "Harvest Moon loading"
+      MinecraftForge.EVENT_BUS.register(TreeShake)
     }
   }
 
@@ -32,9 +33,7 @@ object HarvestMoon {
 
   class ServerProxy extends CommonProxy {
     @EventHandler
-    override def init(e: FMLInitializationEvent): Unit = {
-      MinecraftForge.EVENT_BUS register TreeShake
-    }
+    override def init(e: FMLInitializationEvent): Unit = super.init(e)
   }
 
 }

@@ -11,6 +11,9 @@ object TreeShake {
 
   @SubscribeEvent
   def rightClick(e: PlayerInteractEvent): Unit = {
+    if (e.world.isRemote) {
+      return
+    }
     log info s"${e.action} @ ${e.x} ${e.y} ${e.z}"
     if (e.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK && e.getResult != Result.DENY) {
       val block = e.world.getBlock(e.x, e.y, e.z)
