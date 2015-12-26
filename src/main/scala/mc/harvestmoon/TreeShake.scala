@@ -27,6 +27,7 @@ object TreeShake {
 
   def scanForTrunkTop(world: World, initialX: Int, initialY: Int, initialZ: Int): (Int, Int, Int) = {
     1.to(3).map(logCount => (initialX, initialY + logCount, initialZ)).takeWhile({ case (x, y, z) =>
-      world.getBlock(x, y, z) != TFCBlocks.fruitTreeLeaves && world.getBlock(x, y, z) != TFCBlocks.fruitTreeLeaves2 && !world.isAirBlock(x, y, z)}).last
-}
+      world.getBlock(x, y, z) != TFCBlocks.fruitTreeLeaves && world.getBlock(x, y, z) != TFCBlocks.fruitTreeLeaves2 && !world.isAirBlock(x, y, z)
+    }).last
+  }
 }
