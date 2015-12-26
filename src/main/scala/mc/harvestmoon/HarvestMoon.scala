@@ -8,20 +8,20 @@ import org.apache.logging.log4j.{LogManager, Logger}
 
 @Mod(modid = "harvestmoon", name = "Harvest Moon", version = "0.0.1", modLanguage = "scala")
 object HarvestMoon {
-  private val log: Logger = LogManager getLogger "HarvestMoon"
+  private val log: Logger = LogManager.getLogger("HarvestMoon")
 
   @SidedProxy(clientSide = "mc.harvestmoon.HarvestMoon$ClientProxy", serverSide = "mc.harvestmoon.HarvestMoon$ServerProxy")
   var proxy: CommonProxy = null
 
   @EventHandler
   def init(e: FMLInitializationEvent): Unit = {
-    proxy init e
+    proxy.init(e)
   }
 
   class CommonProxy {
     @EventHandler
     def init(e: FMLInitializationEvent): Unit = {
-      log info "Harvest Moon loading"
+      log.info("Harvest Moon loading")
       MinecraftForge.EVENT_BUS.register(TreeShake)
     }
   }
