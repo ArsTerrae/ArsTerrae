@@ -19,7 +19,6 @@ object TreeShake {
     }
     if (e.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK && e.getResult != Result.DENY) {
       if (e.world.getBlock(e.x, e.y, e.z) == TFCBlocks.fruitTreeWood) {
-        log.info(s"${e.action} @ ${e.x} ${e.y} ${e.z}")
         (findFruits(e.world, (e.x, e.y, e.z))
           foreach { case (x, y, z) =>
           e.world.getBlock(x, y, z).onBlockActivated(e.world, x, y, z, e.entityPlayer, e.face, 0, 0, 0)
