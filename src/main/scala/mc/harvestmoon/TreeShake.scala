@@ -26,8 +26,6 @@ object TreeShake {
       })
     }
 
-
-
   private def adjacentWood(world: World, pos: Point): Set[Point] = pos match {
     case (x, y, z) => (HashSet((x + 1, y, z), (x - 1, y, z), (x, y, z + 1), (x, y, z - 1), (x, y + 1, z))
       filter { case (x, y, z) => world.getBlock(x, y, z) == TFCBlocks.fruitTreeWood })
