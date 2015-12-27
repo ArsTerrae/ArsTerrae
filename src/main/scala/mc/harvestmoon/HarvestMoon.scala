@@ -23,6 +23,7 @@ object HarvestMoon {
     def init(e: FMLInitializationEvent): Unit = {
       log.info("Harvest Moon loading")
       MinecraftForge.EVENT_BUS.register(TreeShake)
+      MinecraftForge.EVENT_BUS.register(LogPile)
     }
   }
 
