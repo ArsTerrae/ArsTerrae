@@ -8,7 +8,7 @@
     "mcversion": "${mcversion}",
     "url" : "https://gitlab.com/groups/harvest-moon",
     "updateUrl": "https://gitlab.com/groups/harvest-moon",
-    "authorList": [ "harvestmoon" ],
+    "authorList": [ "Alon (Artyom Kreynes)", "angelsl (Tee Hao Wei)" ],
     "credits": "https://gitlab.com/groups/harvest-moon",
     "logoFile": "",
     "screenshots": [  ],

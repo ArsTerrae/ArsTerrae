@@ -6,7 +6,7 @@ import cpw.mods.fml.common.{Mod, SidedProxy}
 import net.minecraftforge.common.MinecraftForge
 import org.apache.logging.log4j.{LogManager, Logger}
 
-@Mod(modid = "harvestmoon", name = "Harvest Moon", version = "0.0.1", modLanguage = "scala")
+@Mod(modid = "harvestmoon", name = "Harvest Moon", version = "0.0.2", modLanguage = "scala")
 object HarvestMoon {
   private val log: Logger = LogManager.getLogger("HarvestMoon")
 
