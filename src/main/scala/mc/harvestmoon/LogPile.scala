@@ -26,18 +26,17 @@ object LogPile {
 
     teLogPile.storage.zipWithIndex foreach {
       case (item, index) =>
-        if (item != null && teLogPile.contentsMatch(index, item)) {
+        if (teLogPile.contentsMatch(index, handStack)) {
           val add = math.min(4 - item.stackSize, handStack.stackSize)
           teLogPile.injectContents(index, add)
           handStack.stackSize -= add
+          e.setCanceled(true)
         } else if (item == null) {
           val add = math.min(handStack.stackSize, 4)
           teLogPile.addContents(index, new ItemStack(handStack.getItem, add, handStack.getItemDamage))
           handStack.stackSize -= add
-        } else {
-          return
+          e.setCanceled(true)
         }
-        e.setCanceled(true)
     }
   }
 }
