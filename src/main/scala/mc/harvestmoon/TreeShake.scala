@@ -1,6 +1,7 @@
 package mc.harvestmoon
 
 import com.bioxx.tfc.TileEntities.TEFruitTreeWood
+import scala.util.Random
 import com.bioxx.tfc.api.TFCBlocks
 import cpw.mods.fml.common.eventhandler.Event.Result
 import cpw.mods.fml.common.eventhandler.SubscribeEvent
@@ -20,10 +21,10 @@ object TreeShake {
       && e.getResult != Result.DENY
       && e.world.getBlock(e.x, e.y, e.z) == TFCBlocks.fruitTreeWood
       && e.world.getTileEntity(e.x, e.y, e.z).asInstanceOf[TEFruitTreeWood].isTrunk) {
-      (findFruits(e.world, (e.x, e.y, e.z))
+      (Random.shuffle(findFruits(e.world, (e.x, e.y, e.z)).toSeq).take(Random.nextInt(3) + 1)
         foreach { case (x, y, z) =>
         e.world.getBlock(x, y, z).onBlockActivated(e.world, x, y, z, e.entityPlayer, e.face, 0, 0, 0)
-      })
+        })
     }
 
   private def adjacentWood(world: World, pos: Point): Set[Point] = pos match {
