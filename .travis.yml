@@ -2,36 +2,29 @@ language: java
 os: linux
 jdk: oraclejdk8
 sudo: false
-
 install: true
 script:
-  - ./gradlew build
-#  - ./gradlew check
-
+- "./gradlew build"
 before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 after_success:
-  - git clone https://github.com/HarvestMoon/CIBuilds.git ~/hmdeploy
-  - ~/hmdeploy/deploy.sh
-
+- git clone https://github.com/HarvestMoon/CIBuilds.git ~/hmdeploy
+- "~/hmdeploy/deploy.sh"
 cache:
   directories:
-    - "$HOME/.gradle/caches/"
-    - "$HOME/.gradle/wrapper/"
-
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
 notifications:
   email: false
   irc:
     channels:
-      - irc.fyrechat.net#vana-commits
-      - irc.fyrechat.net#harvestmoon
+    - irc.fyrechat.net#vana-commits
+    - irc.fyrechat.net#harvestmoon
     skip_join: true
     template:
-      - "%{repository}#%{build_number} (%{branch} - %{commit} - %{author}): %{message}"
-
+    - "%{repository}#%{build_number} (%{branch} - %{commit} - %{author}): %{message}"
 env:
   global:
-    - GITHUB_USER=HarvestMoon
-    - GITHUB_REPO=CIBuilds
-    - secure: MudqoAo4b0Iej8JhtaEHpM3dOMHnjD0+QxIURtVT/fseNhvhX2Dxm+kFPoux1YV1lL1mjZUQMPjOZY3tUSHWy1V7iweTvnjEpHMEyJAnei3ChptyziazcDFb/xsJ+rWV0JTnG/mATuD0NBDLN/MGD9q+DC5d2O8nK9xGHYCmZWm6FRCVm+by1GEwNRfb/2MyoHZnMjgR6FkRnOaxdwBwlV/zT9m1zPzmAto/4hFmg+2ObF5215fqQUPxSTb78czZTmO93DgQhqgHFB9NQNf380h3tOewJFaQhbYgxqaojxMG2K4JKjpnIPz68F+2tlihGlE3bp2zhdPz3Hb8NY9m8IpbMExT/6Aq0/GSzLAUXwtubEOxQn9kGMAOHB4QwmWIAFmZK60WcRAGt3V4e08WiQGqPScc/TZsQseSsjoC6OM8/qkEyiLvrZPy4xkv4ZqxJx/TUgcxqbszsyu2tHAdyuglnbtmYReVRiPEcPvn/YdBAq6RfFLWH3IJJo6TkVjRyoLBVwZoYwfascaF/OpiuYNrC0caP+0nyugL1rXmXq1NfQ6PSNAyOodCPPPLwCCerUnn10NNYplCKegHUyFsR/LbtBlEXEI9SiwLidhWazHw41scexq4Xnp6Ooi2ex9/T3pSvKbOz7TjPXCMwrQL7K2MWSOwcZeqxLGXiZ4EgUI=
+  - GITHUB_USER=HarvestMoon
+  - GITHUB_REPO=CIBuilds
+  - secure: L4+egolKuv+TFFZ1RfFoH4T+JIgIEAmdcA41F2D9qaJLMZMH7+mRgT/fzp6EXFC1P+iPgcHhfees+loFsPR6jJsXDm3Jstn+jgeGGcuraCy+t7+hxcNdbUwGfpBwP6lMoP5tGmz5aiiJxreU7UBxp94kD6ihkBKogepwtQGQV7jXuxqtsqataxtk7zl499/XGFpgNy/9P7mDkmBYvSsgqhKCt73KWVSufV91oKpMiV++YoUXvXysGbrmWXaH0SLqYc46lLFXEt7fm4EI/maznuZVpuHt6xTrsg1l5AkxT7E2bUI5VdnbBFme4r+CaobyrxsaHsT2XjLWCccw/g5DL02efVcsaN4phNjMKJ++0S825Wo/lW6XKjDqe8bNEP6AuV9PCcl+6RwOK/KSubBn7wLMTA47VeF61IM9gEMJRvALhyzO/PZhKA4luEdosnrulLc9n7SXOoN8RmDflx+LQzRHv/BtE8qWgDsNCisbn2WA7tJPo017Z7Ld+pNtWTOmKCXo/qaRiPoVIcwmpHgoAAxI3vYl4uLGgq1G0sj1HMdt//8TqOMvl4o3fA78MRDOIzseOLWHZ3yUsz4bf+8hu8T+1SdIVbMjxFjx5bpCen5B7TxFBkRMWPzQiLRBcGRdRvRTrC0d9kYx8KYJDSfdm8QmM1Qh+N234wuXv7uzrfg=
