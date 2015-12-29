@@ -8,7 +8,7 @@ script:
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 after_success:
-- git clone https://github.com/HarvestMoon/CIBuilds.git ~/hmdeploy
+- git clone https://github.com/HarvestMoon/CI.git ~/hmdeploy
 - "~/hmdeploy/deploy.sh"
 cache:
   directories:
