@@ -3,6 +3,11 @@ os: linux
 jdk: oraclejdk8
 sudo: false
 
+install: true
+script:
+  - ./gradlew build
+  - ./gradlew check
+
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 
