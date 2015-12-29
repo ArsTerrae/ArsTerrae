@@ -6,17 +6,27 @@ sudo: false
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 
+after_success:
+  - git checkout https://github.com/HarvestMoon/CIBuilds.git ~/hmdeploy
+  - ~/hmdeploy/deploy.sh
+
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
 
 notifications:
-    email: false
-    irc:
-        channels:
-            - "irc.fyrechat.net#vana-commits"
-            - "irc.fyrechat.net#harvestmoon"
-        skip_join: true
-        template:
-            - "%{repository}#%{build_number} (%{branch} - %{commit} - %{author}): %{message}"
+  email: false
+  irc:
+    channels:
+      - irc.fyrechat.net#vana-commits
+      - irc.fyrechat.net#harvestmoon
+    skip_join: true
+    template:
+      - "%{repository}#%{build_number} (%{branch} - %{commit} - %{author}): %{message}"
+
+env:
+  global:
+    - GITHUB_USER=HarvestMoon
+    - GITHUB_REPO=CIBuilds
+    - secure: MudqoAo4b0Iej8JhtaEHpM3dOMHnjD0+QxIURtVT/fseNhvhX2Dxm+kFPoux1YV1lL1mjZUQMPjOZY3tUSHWy1V7iweTvnjEpHMEyJAnei3ChptyziazcDFb/xsJ+rWV0JTnG/mATuD0NBDLN/MGD9q+DC5d2O8nK9xGHYCmZWm6FRCVm+by1GEwNRfb/2MyoHZnMjgR6FkRnOaxdwBwlV/zT9m1zPzmAto/4hFmg+2ObF5215fqQUPxSTb78czZTmO93DgQhqgHFB9NQNf380h3tOewJFaQhbYgxqaojxMG2K4JKjpnIPz68F+2tlihGlE3bp2zhdPz3Hb8NY9m8IpbMExT/6Aq0/GSzLAUXwtubEOxQn9kGMAOHB4QwmWIAFmZK60WcRAGt3V4e08WiQGqPScc/TZsQseSsjoC6OM8/qkEyiLvrZPy4xkv4ZqxJx/TUgcxqbszsyu2tHAdyuglnbtmYReVRiPEcPvn/YdBAq6RfFLWH3IJJo6TkVjRyoLBVwZoYwfascaF/OpiuYNrC0caP+0nyugL1rXmXq1NfQ6PSNAyOodCPPPLwCCerUnn10NNYplCKegHUyFsR/LbtBlEXEI9SiwLidhWazHw41scexq4Xnp6Ooi2ex9/T3pSvKbOz7TjPXCMwrQL7K2MWSOwcZeqxLGXiZ4EgUI=
