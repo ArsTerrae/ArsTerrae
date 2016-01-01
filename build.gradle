@@ -20,8 +20,8 @@ apply plugin: "forge"
 apply plugin: "idea"
 
 version = "0.0.2"
-group = "mc.harvestmoon"
-archivesBaseName = "harvestmoon"
+group = "mc.terrartis"
+archivesBaseName = "terrartis"
 
 minecraft {
     version = "1.7.10-10.13.4.1566-1.7.10"
@@ -38,8 +38,8 @@ repositories {
         url "http://chickenbones.net/maven/"
     }
     maven {
-        name = "harvestmoon"
-        url = "https://github.com/HarvestMoon/Maven/raw/master/"
+        name = "terrartis"
+        url = "https://github.com/Terrartis/Maven/raw/master/"
     }
 }
 

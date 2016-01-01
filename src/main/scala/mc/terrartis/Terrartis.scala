@@ -1,4 +1,4 @@
-// Copyright (c) 2015 Contributors to Harvest Moon
+// Copyright (c) 2015 Contributors to Terrartis
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of
 // this software and associated documentation files (the "Software"), to deal in
@@ -17,7 +17,7 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-package mc.harvestmoon
+package mc.terrartis
 
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.event.FMLInitializationEvent
@@ -25,11 +25,11 @@ import cpw.mods.fml.common.{Mod, SidedProxy}
 import net.minecraftforge.common.MinecraftForge
 import org.apache.logging.log4j.{LogManager, Logger}
 
-@Mod(modid = "harvestmoon", name = "Harvest Moon", version = "0.0.2", modLanguage = "scala")
-object HarvestMoon {
-  private val log: Logger = LogManager.getLogger("HarvestMoon")
+@Mod(modid = "terrartis", name = "Terrartis", version = "0.0.2", modLanguage = "scala")
+object Terrartis {
+  private val log: Logger = LogManager.getLogger("Terrartis")
 
-  @SidedProxy(clientSide = "mc.harvestmoon.HarvestMoon$ClientProxy", serverSide = "mc.harvestmoon.HarvestMoon$ServerProxy")
+  @SidedProxy(clientSide = "mc.terrartis.Terrartis$ClientProxy", serverSide = "mc.terrartis.Terrartis$ServerProxy")
   var proxy: CommonProxy = null
 
   @EventHandler
@@ -40,7 +40,7 @@ object HarvestMoon {
   class CommonProxy {
     @EventHandler
     def init(e: FMLInitializationEvent): Unit = {
-      log.info("Harvest Moon loading")
+      log.info("Terrartis loading")
       MinecraftForge.EVENT_BUS.register(TreeShake)
       MinecraftForge.EVENT_BUS.register(LogPile)
     }

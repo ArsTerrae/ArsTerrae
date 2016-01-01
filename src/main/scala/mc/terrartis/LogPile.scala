@@ -1,4 +1,4 @@
-// Copyright (c) 2015 Contributors to Harvest Moon
+// Copyright (c) 2015 Contributors to Terrartis
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of
 // this software and associated documentation files (the "Software"), to deal in
@@ -17,7 +17,7 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-package mc.harvestmoon
+package mc.terrartis
 
 import com.bioxx.tfc.TileEntities.TELogPile
 import com.bioxx.tfc.api.{TFCBlocks, TFCItems}
