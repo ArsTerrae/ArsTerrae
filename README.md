@@ -8,3 +8,7 @@ port: 6667 (SSL: 6697)
 channel: #terrartis
 ```
 
+### Copyright and License
+
+Copyright © 2015-2016 Terrartis. Code released under the [GPL v3 License](https://github.com/Terrartis/Terrartis/blob/master/LICENSE.md).
+
