@@ -8,7 +8,7 @@ script:
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 after_success:
-- git clone https://github.com/Terrartis/CI.git ~/deploy
+- git clone https://github.com/ArsTerrae/CI.git ~/deploy
 - "~/deploy/deploy.sh"
 cache:
   directories:
@@ -19,12 +19,12 @@ notifications:
   irc:
     channels:
     - irc.fyrechat.net#vana-commits
-    - irc.fyrechat.net#terrartis
+    - irc.fyrechat.net#arsterrae
     skip_join: true
     template:
     - "%{repository}#%{build_number} (%{branch} - %{commit} - %{author}): %{message}"
 env:
   global:
-  - GITHUB_USER=Terrartis
+  - GITHUB_USER=ArsTerrae
   - GITHUB_REPO=CIBuilds
   - secure: L4+egolKuv+TFFZ1RfFoH4T+JIgIEAmdcA41F2D9qaJLMZMH7+mRgT/fzp6EXFC1P+iPgcHhfees+loFsPR6jJsXDm3Jstn+jgeGGcuraCy+t7+hxcNdbUwGfpBwP6lMoP5tGmz5aiiJxreU7UBxp94kD6ihkBKogepwtQGQV7jXuxqtsqataxtk7zl499/XGFpgNy/9P7mDkmBYvSsgqhKCt73KWVSufV91oKpMiV++YoUXvXysGbrmWXaH0SLqYc46lLFXEt7fm4EI/maznuZVpuHt6xTrsg1l5AkxT7E2bUI5VdnbBFme4r+CaobyrxsaHsT2XjLWCccw/g5DL02efVcsaN4phNjMKJ++0S825Wo/lW6XKjDqe8bNEP6AuV9PCcl+6RwOK/KSubBn7wLMTA47VeF61IM9gEMJRvALhyzO/PZhKA4luEdosnrulLc9n7SXOoN8RmDflx+LQzRHv/BtE8qWgDsNCisbn2WA7tJPo017Z7Ld+pNtWTOmKCXo/qaRiPoVIcwmpHgoAAxI3vYl4uLGgq1G0sj1HMdt//8TqOMvl4o3fA78MRDOIzseOLWHZ3yUsz4bf+8hu8T+1SdIVbMjxFjx5bpCen5B7TxFBkRMWPzQiLRBcGRdRvRTrC0d9kYx8KYJDSfdm8QmM1Qh+N234wuXv7uzrfg=

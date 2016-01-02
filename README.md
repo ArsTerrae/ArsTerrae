@@ -1,14 +1,10 @@
-# Terrartis [![Build Status](https://travis-ci.org/Terrartis/Terrartis.svg?branch=master)](https://travis-ci.org/Terrartis/Terrartis)
+# Ars Terrae [![Build Status](https://travis-ci.org/ArsTerrae/ArsTerrae.svg?branch=master)](https://travis-ci.org/ArsTerrae/ArsTerrae)
 
 ### Support
-Got any questions? Want to chat with us? Join us on IRC!
-```sh
-hostname: irc.fyrechat.net
-port: 6667 (SSL: 6697)
-channel: #terrartis
-```
+
+Got any questions? Want to chat with us? [Join us on IRC](irc://irc.fyrechat.net/#arsterrae) at irc.fyrechat.net #arsterrae!
 
 ### Copyright and License
 
-Copyright © 2015-2016 Terrartis. Code released under the [GPL v3 License](https://github.com/Terrartis/Terrartis/blob/master/LICENSE.md).
+Copyright © 2015-2016 Contributors to Ars Terrae. Code released under the [GPL v3 License](https://github.com/ArsTerrae/ArsTerrae/blob/master/LICENSE.md).
 
